@@ -1,8 +1,9 @@
+# importing all neccessary modules
 from tkinter import *
 from pytube import Youtube
 from tkinter import messagebox,filedialog
 
-
+# setting up functions
 def browse():
     download_directory = filedialog.askdirectory(initialdir= "/Users/diven/Downloads")
     down_path.set(download_directory)
@@ -15,6 +16,8 @@ def download():
 
     messagebox.showinfo("success","video in downloads")
 
+# creating widgets 
+# using grid method
 link_label = Label(root,text = "Youtube Link: ",bg="red")
 link_label.grid(row=1,column=0,padx=10,pady=10)
 
@@ -34,7 +37,7 @@ download_b = Button(root,text="download",bg='blue',width=10,command=download)
 download_b.grid(row=3,column=1)
 
 
-
+# setting up the root window,config,geometry
 root = Tk()
 root.config(bg="black")
 root.title("Youtube downloader: ")
